@@ -1,9 +1,10 @@
 import os
 import time
 #Setup for start.bat file with Ram and Jar executable name
+div = '---------------------------------------------'
 def sbat():
     print('Starting job start.bat')
-    print('---------------------------------------------')
+    print(div)
     print('Server will by default start with no gui only cli.')
     #asks for amount of ram to use
     aram = int(input('How many gigabytes of ram? :'))
@@ -41,9 +42,9 @@ def servers(question = "[y/n]", strict = True):
 
 #starts program and calls eula and start.bat functions
 print('Starting program.')
-print('---------------------------------------------')
+print(div)
 eulat()
-print('---------------------------------------------')
+print(div)
 sbat()
-print('---------------------------------------------')
+print(div)
 servers()
