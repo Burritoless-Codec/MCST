@@ -13,8 +13,9 @@ def sbat():
 
     #creates/overwrites start.bat file with new variables
     sbf = open('start.bat', 'w')
+    sbf.write('@echo off\ncls\n:start\n')
     sbf.write('java -Xmx' + str(aram) + 'G -Xms' + str(aram) + 'G -jar ' + str(jarname) + ' nogui\n')
-    sbf.write('pause\n')
+    sbf.write('echo (%time%) Server closed/crashed... restarting!\ngoto start')
     sbf.close()
     print('start.bat job finished!')
 def eulat():
@@ -33,7 +34,7 @@ def servers(question = "[y/n]", strict = True):
         os.startfile('start.bat')
     elif (x == "no") or (x == "n") :
         print('Exiting program.')
-        time.sleep(20)
+        time.sleep(5)
         exit()
     else:
         return servers(strict=strict)
@@ -53,6 +54,7 @@ def sprop():
 
     print('Updating settings')
 
+    spf.write('#server.properties generated with MCST\n')
     spf.write('generator-settings=\n')
     spf.write('op-permission-level=4\n')
     spf.write('allow-nether=true\n')
