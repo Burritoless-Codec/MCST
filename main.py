@@ -38,6 +38,58 @@ def servers(question = "[y/n]", strict = True):
     else:
         return servers(strict=strict)
 
+def sprop():
+    print('Starting job server.properties')
+
+
+    spf = open('server.properties', 'w')
+
+    wl = str(input('white listed true/false:'))
+    hc = str(input('Hardcore mode true/false:'))
+    mp = int(input('Max players (i.e. 10): '))
+    pvp = str(input('PVP true/false: '))
+    motd = str(input('Server Motd: '))
+
+
+    print('Updating settings')
+
+    spf.write('generator-settings=\n')
+    spf.write('op-permission-level=4\n')
+    spf.write('allow-nether=true\n')
+    spf.write('level-name=world\n')
+    spf.write('enable-query=false\n')
+    spf.write('allow-flight=false\n')
+    spf.write('announce-player-achievements=true\n')
+    spf.write('server-port=25565\n')
+    spf.write('max-world-size=29999984\n')
+    spf.write('level-type=DEFAULT\n')
+    spf.write('enable-rcon=false\n')
+    spf.write('level-seed=\n')
+    spf.write('force-gamemode=false\n')
+    spf.write('server-ip=\n')
+    spf.write('network-compression-threshold=256\n')
+    spf.write('max-build-height=256\n')
+    spf.write('spawn-npcs=true\n')
+    spf.write('white-list=' + wl.lower() + '\n')
+    spf.write('spawn-animals=true\n')
+    spf.write('hardcore=' + hc.lower() + '\n')
+    spf.write('snooper-enabled=true\n')
+    spf.write('resource-pack-sha1=\n')
+    spf.write('online-mode=true\n')
+    spf.write('resource-pack=\n')
+    spf.write('pvp=' + pvp.lower() + '\n')
+    spf.write('difficulty=1\n')
+    spf.write('enable-command-block=false\n')
+    spf.write('gamemode=20\n')
+    spf.write('player-idle-timeout=0\n')
+    spf.write('max-players=' + str(mp) + '\n')
+    spf.write('max-tick-time=60000\n')
+    spf.write('spawn-monsters=true\n')
+    spf.write('generate-structures=true\n')
+    spf.write('view-distance=10\n')
+    spf.write('motd=' + motd + '\n')
+    spf.close()
+    print('server.properties job finished')
 
 
 #starts program and calls eula and start.bat functions
@@ -46,5 +98,7 @@ print(div)
 eulat()
 print(div)
 sbat()
+print(div)
+sprop()
 print(div)
 servers()
