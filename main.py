@@ -21,7 +21,7 @@ def sbat():
 def eulat():
     print('Starting job eula.txt')
     euf = open('eula.txt', 'w')
-    euf.write('eula=true')
+    euf.write('eula=true\n')
     print('Eula set to true')
     euf.close()
     print('eula.txt job finished!')
